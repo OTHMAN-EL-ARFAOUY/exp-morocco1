@@ -1,0 +1,201 @@
+.container.is-slider.travels {
+	position: relative;
+}
+
+.book-now-offering {
+	position: absolute;
+	right: 24px;
+	bottom: 24px;
+	z-index: 999;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	background: transparent;
+	color: #ff7a00;
+	border: 2px solid #ff7a00;
+	cursor: pointer;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+	font-size: 12px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.book-now-inline {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 12px;
+	width: 50px;
+	height: 50px;
+	background: transparent;
+	/* orange framed 'cadrage' */
+	color: #ff7a00;
+	border: 2px solid #ff7a00;
+	border-radius: 50%;
+	text-decoration: none;
+	transition: background 150ms ease, color 150ms ease;
+	/* positioned beside the slide image */
+	position: absolute;
+	right: 24px;
+	bottom: 24px;
+	z-index: 20;
+	cursor: pointer;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.book-now-inline:hover {
+	background: #ff7a00;
+	color: #fff;
+}
+
+.book-now-inline:focus{
+  outline: 3px solid rgba(255,122,0,0.15);
+  outline-offset: 2px;
+}
+
+/* Apply same orange framed 'cadrage' to any CTA variants */
+a.cta-primary.book-now-offering,
+a.cta-primary.book-now-inline,
+.book-now-offering,
+.book-now-inline {
+	background: transparent;
+	color: #ff7a00;
+	border: 2px solid #ff7a00;
+}
+
+a.cta-primary.book-now-offering:hover,
+a.cta-primary.book-now-inline:hover,
+.book-now-offering:hover,
+.book-now-inline:hover {
+	background: #ff7a00;
+	color: #fff;
+}
+
+a.cta-primary.book-now-offering:focus,
+a.cta-primary.book-now-inline:focus,
+.book-now-offering:focus,
+.book-now-inline:focus {
+	outline: 3px solid rgba(255,122,0,0.15);
+	outline-offset: 2px;
+}
+
+/* Ensure each slide is a positioning context for the absolute button */
+.swiper-slide.is-content.travels,
+.swiper-slide {
+		position: relative;
+}
+
+/* Mobile: put button back into flow under text */
+@media (max-width: 767px) {
+	.book-now-inline {
+		position: static;
+		transform: none;
+		margin-top: 12px;
+		display: inline-block;
+	}
+}
+
+/* 'What we do' paragraph — make text black for readability */
+.whatwedoheader + p,
+.whatwedoheader ~ p {
+  color: #000 !important;
+}
+
+/* Cadr (offset frame) for Book Now buttons */
+.book-now-offering::before,
+.book-now-inline::before {
+		content: "";
+		position: absolute;
+		left: -10px;
+		top: -10px;
+		right: -10px;
+		bottom: -10px;
+		border: 2px solid #ff7a00;
+		border-radius: 10px;
+		pointer-events: none;
+		transition: transform 180ms ease, opacity 180ms ease;
+		z-index: 998;
+}
+
+.book-now-offering:hover::before,
+.book-now-inline:hover::before {
+		transform: scale(1.03);
+		opacity: 1;
+}
+
+/* On small screens the inline button becomes static — hide the offset frame to avoid layout issues */
+@media (max-width: 767px) {
+	.book-now-inline::before { display: none; }
+}
+
+/* Ensure paragraphs in the 'What we do' section are black */
+.what-we-do p,
+.what-we-do .main-paragraph,
+#about p {
+  color: #000 !important;
+}
+
+/* Replace Travel Philosophy image with philo.png */
+.section-image.rev.travel_phyl {
+	background-image: url('philo.png') !important;
+	background-size: cover;
+	background-position: center;
+}
+
+/* Move Tidio chat widget down from bottom */
+#tidio-chat {
+	bottom: 80px !important;
+}
+
+/* Hide chat label "Chat with us" */
+.widgetLabel {
+	display: none !important;
+}
+
+/* Moroccan Style - Paragraphs */
+p {
+	font-family: 'Georgia', 'Garamond', serif;
+	color: #2d2d2d;
+	line-height: 1.8;
+	letter-spacing: 0.5px;
+}
+
+.main-paragraph,
+.slider_info-text p {
+	border-left: 4px solid #d4a574;
+	padding-left: 20px;
+	position: relative;
+	background: linear-gradient(to right, rgba(212, 165, 116, 0.05), transparent);
+	padding: 16px 20px;
+	border-radius: 2px;
+}
+
+.main-paragraph::before,
+.slider_info-text p::before {
+	content: "✦";
+	position: absolute;
+	left: -12px;
+	top: -8px;
+	color: #ff7a00;
+	font-size: 18px;
+}
+
+.slider_title-text {
+	font-family: 'Georgia', serif;
+	color: #1a1a1a;
+	border-bottom: 3px solid #ff7a00;
+	padding-bottom: 12px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.travelphilo {
+	font-style: italic;
+	color: #3a3a3a;
+}
