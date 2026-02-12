@@ -199,3 +199,30 @@ p {
 	font-style: italic;
 	color: #3a3a3a;
 }
+
+/* Weee image */
+.weee-image {
+	background-image: url('weee.jpg') !important;
+	background-size: cover;
+	background-position: center;
+}
+
+/* Waaa image */
+.waaa-image {
+	background-image: url('waaa.jpg') !important;
+	background-size: cover;
+	background-position: center;
+}
+
+/* Specific element with data-w-id */
+div[data-w-id="712cc740-a3bc-4bbc-4fd3-2cafdc08eeca"] {
+	background-image: url('waaa.jpg') !important;
+	background-size: cover;
+	background-position: center;
+}
+
+div[data-w-id="712cc740-a3bc-4bbc-4fd3-2cafdc08eecb"] {
+	background-image: url('waaa.jpg') !important;
+	background-size: cover;
+	background-position: center;
+}
